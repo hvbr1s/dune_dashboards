@@ -52,7 +52,8 @@ with
       passes desc
   )
 select
-  wallet as owners
+  REPLACE(wallet::text,'\','0') as owners
+          
 from
   agg
 where
